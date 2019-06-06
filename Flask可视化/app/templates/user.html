@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    {% block container %}
+        <h2 class="sub-header">用户仓库</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>仓库名字</th>
+                        <th>仓库星星</th>
+                        <th>URL地址</th>
+                        <th>仓库简介</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for repo in repos %}
+                        <tr>
+                            <td>{{ repo.name }}</td>
+                            <td>{{ repo.stars }}</td>
+                            <td>{{ repo.url_address }}</td>
+                            <td>{{ repo.descr }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
+{% endblock %}
